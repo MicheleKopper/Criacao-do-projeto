@@ -149,4 +149,5 @@ function App() {
 
 export default App;
 ```
+
 09 - Criar a pasta `components` dento de `src`. Criar a pasta `styleds` dentro de `components`. Criar os arquivos .tsx para as customizações
