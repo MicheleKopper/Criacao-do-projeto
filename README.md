@@ -8,7 +8,7 @@ npm create vite@latest my-react-app -- --template react-ts
 
 02 - Abrir a pasta do projeto criado
 
-03 - Instalar as dependências
+03 - Instalar as dependências (node modules)
 
 ```bash
 npm install
@@ -35,7 +35,6 @@ export default App
 
 06 - No arquivo `main.tsx` excluir `import './index.css'`
 
-07 - Excluir pasta `assets`
 
 ## Criação do projeto ReactJS
 
@@ -49,34 +48,32 @@ npm i react-router-dom
 
 OBS: configuração [React Router Dom](https://reactrouter.com/en/main/start/overview)
 
-03 - Dentro da pasta `src`, criar a pasta `configs`. Dentro de `configs` criar a pasta `routes`
-
-04 - Criar o arquivo `AppRoutes.tsx` dentro da pasta `routes`. Colar o código abaixo
+03 - Instalar o `Styled-Components`
 
 ```bash
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "../../pages/Login";
-import Home from "../../pages/Home";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Login />,
-  },
-  {
-    path: "/home",
-    element: <Home />,
-  },
-]);
-
-function AppRoutes() {
-  return <RouterProvider router={router} />;
-}
-
-export default AppRoutes;
+npm install styled-components
 ```
 
-05 - No arquivo `App.tsx` colocar o seguinte código
+04 - Dentro da pasta `src`, criar a pasta `configs`. Dentro de `configs` criar a pasta `routes`
+
+05 - Criar o arquivo `AppRoutes.tsx` dentro da pasta `routes`. Colar o código abaixo
+
+```bash
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+const router = createBrowserRouter([
+    {
+       path: '/',
+       element: <div></div>,
+    },
+]);
+
+export function AppRoutes() {
+    return <RouterProvider router={router} />;
+}
+```
+
+06 - No arquivo `App.tsx` colocar o seguinte código
 
 ```bash
 import AppRoutes from "./configs/routes/AppRoutes";
@@ -88,9 +85,7 @@ function App() {
 export default App;
 ```
 
-06 - Criar a pasta `pages` dentro de `src`. Criar os arquivos que vão representar as páginas, ex: `Home.tsx` e `Login.tsx`
-
-- Home:
+07 - Criar a pasta `pages` dentro de `src`. Criar os arquivos que vão representar as páginas, ex: `Home.tsx`
 
 ```bash
 function Home () {
@@ -104,31 +99,22 @@ function Home () {
   export default Home
 ```
 
-- Login:
+08 - Dentro da pasta `configs` criar a pasta `global`, criar o arquivo `GlobalStyles.tsx` e inserir o código abaixo
 
 ```bash
-function Login() {
-  return (
-    <>
-      <h1>Login</h1>
-    </>
-  );
-}
-
-export default Login
-```
-
-07 - Dentro da pasta `configs` criar a pasta `global`, criar o arquivo `GlobalStyles.tsx` e inserir o código abaixo
-
-```bash
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
- *{
-    margin: 0;
+   * {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
- }
+   }
+
+   body {
+    background-color: #ffff;
+    font-family: "Poppins", sans-serif;
+   }
 `;
 ```
 
@@ -150,4 +136,4 @@ function App() {
 export default App;
 ```
 
-09 - Criar a pasta `components` dento de `src`. Criar a pasta `styleds` dentro de `components`. Criar os arquivos .tsx para as customizações
+09 - Criar a pasta `components` dento de `src`. Criar a pasta `styleds` dentro de `components`. Criar os arquivos `.tsx` para as customizações
