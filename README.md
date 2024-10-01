@@ -38,7 +38,7 @@ export default App
 
 ## Criação do projeto ReactJS
 
-01 - Dentro da pasta `src`, criar a pasta `components`
+01 - Dentro da pasta `src`, criar a pasta `components`, dentro de `components`, criar a pasta `styleds`
 
 02 - Instalar o `react-router-dom`
 
@@ -122,7 +122,7 @@ export const GlobalStyle = createGlobalStyle`
 
 ```bash
 import { GlobalStyle } from "./configs/global/GlobalStyles";
-import AppRoutes from "./configs/routes/AppRoutes";
+import { AppRoutes } from "./configs/routes/AppRoutes";
 
 function App() {
   return (
@@ -136,4 +136,4 @@ function App() {
 export default App;
 ```
 
-09 - Criar a pasta `components` dento de `src`. Criar a pasta `styleds` dentro de `components`. Criar os arquivos `.tsx` para as customizações
+
